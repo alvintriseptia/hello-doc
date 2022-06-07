@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "378350979938",
+    "project_id": "hello-doc-edf8a",
+    "storage_bucket": "hello-doc-edf8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378350979938:android:621dc793b444813860ba3b",
+        "android_client_info": {
+          "package_name": "com.alvindev.hello_doc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378350979938-ha7umu9an60hhohv1n41e7n4obnflero.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOlErJscgUFv_Uotra-_XqUW1zMoZL0js"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378350979938-ha7umu9an60hhohv1n41e7n4obnflero.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
