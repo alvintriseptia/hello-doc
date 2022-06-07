@@ -1,16 +1,9 @@
-# hello_doc
+# Hello Doc
 
-A new Flutter project.
+## About App
 
-## Getting Started
+Hello Doc is a mobile app that will help you find specialized doctors and take appointments online without going to the hospital.
 
-This project is a starting point for a Flutter application.
+## Resources
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[Hello Doc - UX/UI Case Study on Medical App](https://www.behance.net/gallery/123018605/Hello-Doc-UXUI-Case-Study-on-Medical-App?tracking_source=search_projects_appreciations%7Cmobile%20app%20case%20study)
