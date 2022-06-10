@@ -57,7 +57,7 @@ class AnimatedLogo extends StatelessWidget {
         child: Opacity(
           opacity: opacityText.value,
           child: Container(
-            margin: EdgeInsets.only(top: 2.0),
+            margin: const EdgeInsets.only(top: 2.0),
             child: const Text(
               'Doc',
               style: Fonts.splashText,
@@ -68,7 +68,7 @@ class AnimatedLogo extends StatelessWidget {
       FractionalTranslation(
         translation: offsetLeft.value,
         child: Container(
-          margin: EdgeInsets.only(top: Dimens.dp8),
+          margin: const EdgeInsets.only(top: Dimens.dp8),
           width: 130,
           height: 60,
           child: Opacity(

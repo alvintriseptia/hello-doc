@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
         duration: const Duration(milliseconds: 2000), vsync: this);
     repeatOnce();
 
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushNamedAndRemoveUntil(
           context, '/onboarding', (route) => false);
     });
