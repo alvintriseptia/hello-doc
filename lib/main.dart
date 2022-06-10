@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
         title: 'Hello Doc',
         initialRoute: '/initial',
         routes: {
-          '/': (context) => Scaffold(body: Center(child: Text("Home Screen"))),
+          '/': (context) =>
+              const Scaffold(body: Center(child: Text("Home Screen"))),
           '/initial': (context) => const SplashScreen(),
           '/onboarding': (context) => const OnboardingPage(),
         });
