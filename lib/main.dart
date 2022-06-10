@@ -15,9 +15,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Hello Doc', initialRoute: '/', routes: {
-      '/': (context) => const SplashScreen(),
-      '/onboarding': (context) => const OnboardingPage(),
-    });
+    return MaterialApp(
+        theme: ThemeData(
+          fontFamily: 'Roboto',
+        ),
+        title: 'Hello Doc',
+        initialRoute: '/initial',
+        routes: {
+          '/': (context) => Scaffold(body: Center(child: Text("Home Screen"))),
+          '/initial': (context) => const SplashScreen(),
+          '/onboarding': (context) => const OnboardingPage(),
+        });
   }
 }
