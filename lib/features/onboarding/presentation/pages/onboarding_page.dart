@@ -67,27 +67,35 @@ class _OnboardingPageState extends State<OnboardingPage>
     ];
 
     Widget buttonNavbar() {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          TextButton(
-              style: TextButton.styleFrom(textStyle: Fonts.buttonText),
-              onPressed: () {},
-              child: const Text('Skip')),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  primary: AppColors.primaryBlue, textStyle: Fonts.buttonText),
-              onPressed: () {
-                buttonCarouselController.nextPage(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.linear);
-                if (_current == contents.length - 1) {
+      return Container(
+        margin: const EdgeInsets.only(bottom: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TextButton(
+                style: TextButton.styleFrom(textStyle: Fonts.buttonText),
+                onPressed: () {
                   Navigator.pushNamedAndRemoveUntil(
                       context, '/', (route) => false);
-                }
-              },
-              child: const Text('Next')),
-        ],
+                },
+                child: const Text('Skip')),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: AppColors.primaryBlue,
+                    textStyle: Fonts.buttonText),
+                onPressed: () {
+                  buttonCarouselController.nextPage(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.linear);
+                  if (_current == contents.length - 1) {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/', (route) => false);
+                  }
+                },
+                child: const Text('Next')),
+          ],
+        ),
       );
     }
 
@@ -96,11 +104,11 @@ class _OnboardingPageState extends State<OnboardingPage>
         mainAxisAlignment: MainAxisAlignment.center,
         children: contents.asMap().entries.map((entry) {
           return Container(
-            width: 12.0,
+            width: 20.0,
             height: 12.0,
-            margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            margin: const EdgeInsets.symmetric(horizontal: 4.0),
             decoration: BoxDecoration(
-                shape: BoxShape.circle,
+                borderRadius: BorderRadius.circular(6.0),
                 color: _current == entry.key
                     ? AppColors.primaryBlue
                     : AppColors.dark.withOpacity(0.3)),
@@ -125,6 +133,8 @@ class _OnboardingPageState extends State<OnboardingPage>
             autoPlay: false,
             enableInfiniteScroll: false,
             height: 550,
+            aspectRatio: 2.0,
+            enlargeCenterPage: true,
             onPageChanged: (index, reason) {
               setState(() {
                 _current = index;
@@ -135,18 +145,15 @@ class _OnboardingPageState extends State<OnboardingPage>
 
     return Scaffold(
         body: SafeArea(
-            child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: Dimens.dp16),
-                child: FadeTransition(
-                  opacity: _fadeAnimation,
-                  child: Column(
-                    children: [
-                      carousel(),
-                      indicatorCarousel(),
-                      const SizedBox(height: Dimens.dp20),
-                      buttonNavbar()
-                    ],
-                  ),
+            child: FadeTransition(
+                opacity: _fadeAnimation,
+                child: Column(
+                  children: [
+                    carousel(),
+                    indicatorCarousel(),
+                    const Spacer(),
+                    buttonNavbar()
+                  ],
                 ))));
   }
 }
