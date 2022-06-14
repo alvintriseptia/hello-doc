@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_doc/features/onboarding/presentation/pages/onboarding_page.dart';
-import 'package:hello_doc/features/splash_screen/presentation/pages/splash_screen.dart';
+import 'package:hello_doc/core/preferences/colors.dart';
+import 'package:hello_doc/features/pages.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +18,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData(
           fontFamily: 'Roboto',
+          inputDecorationTheme: InputDecorationTheme(
+              filled: true,
+              fillColor: AppColors.lightBlue.withOpacity(0.1),
+              hintStyle: TextStyle(color: AppColors.dark.withOpacity(0.4)),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                  borderRadius: BorderRadius.circular(16)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: AppColors.primaryBlue),
+                  borderRadius: BorderRadius.circular(16))),
         ),
         title: 'Hello Doc',
         initialRoute: '/initial',
@@ -26,6 +36,7 @@ class MyApp extends StatelessWidget {
               const Scaffold(body: Center(child: Text("Home Screen"))),
           '/initial': (context) => const SplashScreen(),
           '/onboarding': (context) => const OnboardingPage(),
+          '/sign-in': (context) => const SignInPage(),
         });
   }
 }

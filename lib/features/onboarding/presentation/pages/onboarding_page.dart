@@ -16,7 +16,7 @@ class _OnboardingPageState extends State<OnboardingPage>
   int _current = 0;
 
   late final AnimationController _animationController = AnimationController(
-    duration: const Duration(seconds: 1),
+    duration: const Duration(milliseconds: 1500),
     vsync: this,
   );
 
@@ -31,18 +31,8 @@ class _OnboardingPageState extends State<OnboardingPage>
     repeatOnce();
   }
 
-  void repeatOnce() async {
-    try {
-      await _animationController.forward().orCancel;
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  @override
-  void dispose() async {
-    _animationController.dispose();
-    super.dispose();
+  void repeatOnce() {
+    _animationController.forward();
   }
 
   @override
@@ -77,7 +67,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                 style: TextButton.styleFrom(textStyle: Fonts.buttonText),
                 onPressed: () {
                   Navigator.pushNamedAndRemoveUntil(
-                      context, '/', (route) => false);
+                      context, '/sign-in', (route) => false);
                 },
                 child: const Text('Skip')),
             ElevatedButton(
@@ -90,7 +80,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                       curve: Curves.linear);
                   if (_current == contents.length - 1) {
                     Navigator.pushNamedAndRemoveUntil(
-                        context, '/', (route) => false);
+                        context, '/sign-in', (route) => false);
                   }
                 },
                 child: const Text('Next')),
