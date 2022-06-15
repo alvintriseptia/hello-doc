@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
               fillColor: AppColors.lightBlue.withOpacity(0.1),
               hintStyle: TextStyle(color: AppColors.dark.withOpacity(0.4)),
               enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.transparent),
+                  borderSide: const BorderSide(color: Colors.transparent),
                   borderRadius: BorderRadius.circular(16)),
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.primaryBlue),
+                  borderSide: const BorderSide(color: AppColors.primaryBlue),
                   borderRadius: BorderRadius.circular(16))),
         ),
         title: 'Hello Doc',
@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
           '/initial': (context) => const SplashScreen(),
           '/onboarding': (context) => const OnboardingPage(),
           '/sign-in': (context) => const SignInPage(),
+          '/sign-up': (context) => const SignUpPage(),
         });
   }
 }

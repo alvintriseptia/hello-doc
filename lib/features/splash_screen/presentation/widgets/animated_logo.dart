@@ -57,7 +57,7 @@ class AnimatedLogo extends StatelessWidget {
         child: Opacity(
           opacity: opacityText.value,
           child: Container(
-            margin: const EdgeInsets.only(top: 2.0),
+            margin: const EdgeInsets.only(top: Dimens.dp2),
             child: const Text(
               'Doc',
               style: Fonts.splashText,
