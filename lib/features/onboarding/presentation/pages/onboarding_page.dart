@@ -58,8 +58,8 @@ class _OnboardingPageState extends State<OnboardingPage>
 
     Widget buttonNavbar() {
       return Container(
-        margin: const EdgeInsets.only(bottom: 10),
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        margin: const EdgeInsets.only(bottom: Dimens.dp10),
+        padding: const EdgeInsets.symmetric(horizontal: Dimens.dp16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -80,7 +80,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                       curve: Curves.linear);
                   if (_current == contents.length - 1) {
                     Navigator.pushNamedAndRemoveUntil(
-                        context, '/sign-in', (route) => false);
+                        context, '/sign-up', (route) => false);
                   }
                 },
                 child: const Text('Next')),
@@ -94,11 +94,11 @@ class _OnboardingPageState extends State<OnboardingPage>
         mainAxisAlignment: MainAxisAlignment.center,
         children: contents.asMap().entries.map((entry) {
           return Container(
-            width: 20.0,
-            height: 12.0,
-            margin: const EdgeInsets.symmetric(horizontal: 4.0),
+            width: Dimens.dp20,
+            height: Dimens.dp12,
+            margin: const EdgeInsets.symmetric(horizontal: Dimens.dp4),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6.0),
+                borderRadius: BorderRadius.circular(Dimens.dp6),
                 color: _current == entry.key
                     ? AppColors.primaryBlue
                     : AppColors.dark.withOpacity(0.3)),
